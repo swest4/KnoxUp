@@ -7,9 +7,9 @@ import Projects from './pages/projects';
 export default () => (
     <Router>
         <Switch>
-            <Route path="/contact/"><Contact /></Route>
-            <Route path="/projects/"><Projects /></Route>
-            <Route path="/"><Home /></Route>
+            <Route path="/contact/" component={Contact} />
+            <Route path="/projects/" component={Projects} />
+            <Route path="/" component={Home} />
         </Switch>
     </Router>
 );
