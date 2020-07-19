@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export default styled.main`
-  @import 'https://use.typekit.net/hsn7pfs.css';
+  @import "https://use.typekit.net/hsn7pfs.css";
 
   text-rendering: optimizeLegibility;
   font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (2100 - 320)));
@@ -78,6 +78,24 @@ export default styled.main`
     text-decoration: none;
     &:hover {
       color: ${(props) => props.theme.color.blurple};
+    }
+  }
+
+  blockquote {
+    font-size: ${(props) => props.theme.type.h4};
+    font-weight: ${(props) => props.theme.fontWeight.medium};
+    font-style: italic;
+    letter-spacing: 0;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 40%;
+      height: 3px;
+      background: ${(props) => props.theme.color.purple};
+      margin: 2rem auto;
+      text-align: center;
     }
   }
 
