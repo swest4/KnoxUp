@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export default styled.section`
   padding: 2rem;
+  height: 100%;
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     padding: 7rem 2rem 5rem;
@@ -10,11 +11,13 @@ export default styled.section`
   .inner {
     max-width: ${(props) => props.theme.maxWidth.container};
     margin: auto;
+    height: 100%;
   }
 
   .wrapper {
     background: ${(props) => props.theme.color.white};
     border-radius: 5px;
+    height: 100%;
 
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
       background: none;
@@ -23,6 +26,7 @@ export default styled.section`
 
   table {
     width: 100%;
+    height: 100%;
     color: ${(props) => props.theme.color.navy};
     border-collapse: collapse;
 
@@ -40,12 +44,20 @@ export default styled.section`
         }
 
         &:last-child {
-          border-radius: 0 0 5px 0;
+          border-radius: 0 5px 0 0;
         }
       }
     }
 
     tbody {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      tr {
+        width: 100%;
+      }
+
       td {
         padding: 0.5rem 1rem;
         border-bottom: solid 1px rgba(0, 0, 0, 0.1);
@@ -73,7 +85,7 @@ export default styled.section`
         margin: 1rem 0;
         background: ${(props) => props.theme.color.white};
         border-radius: 5px;
-        position: absolute;
+        overflow: hidden;
 
         td {
           padding: 1rem;
