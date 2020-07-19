@@ -41,5 +41,11 @@ export default ({
         mobile: '320px',
         tablet: '768px',
         desktop: '1024px',
+    },
+    maxWidth: {
+        container: '1200px',
+    },
+    borderRadius: {
+        subNavLink: '1em',
     }
 });
