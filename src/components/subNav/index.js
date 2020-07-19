@@ -5,17 +5,17 @@ import Styles from './styled';
 export default ({
     links = []
 }) => {
-    const [indicatorStyles, setIndicatorStyles] = useState({ width: 0, left: 0});
+    const [indicatorStyles, setIndicatorStyles] = useState({ width: 0, left: '50%'});
     const listRef = createRef(null);
 
     useEffect(() => {
         const activeChild = listRef.current.querySelector('.active');
-        const { offsetWidth: width, offsetLeft: left } = activeChild;
+        const { offsetWidth: width = 0, offsetLeft: left = 0 } = activeChild || {};
 
         if (indicatorStyles.width !== width || indicatorStyles.left !== left) {
             setIndicatorStyles({
-                width: activeChild.offsetWidth,
-                left: activeChild.offsetLeft
+                width,
+                left,
             });
         }
     });
