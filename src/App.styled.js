@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export default styled.main`
-  @import 'https://use.typekit.net/hsn7pfs.css';
+  @import "https://use.typekit.net/hsn7pfs.css";
 
   text-rendering: optimizeLegibility;
   font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (2100 - 320)));
@@ -79,6 +79,13 @@ export default styled.main`
     &:hover {
       color: ${(props) => props.theme.color.blurple};
     }
+  }
+
+  blockquote {
+    font-size: ${(props) => props.theme.type.h4};
+    font-weight: ${(props) => props.theme.fontWeight.semibold};
+    font-style: italic;
+    letter-spacing: 0;
   }
 
   li {
