@@ -11,7 +11,7 @@ export default () => (
       }
       body {
         color: white;
-        background: linear-gradient(45deg, #060321, #2d224f);
+        background: linear-gradient(183deg, #000000, #22135b);
       }
     `}
   />
