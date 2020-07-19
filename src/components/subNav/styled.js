@@ -35,10 +35,15 @@ export default styled.nav`
         padding: .5em 1.5em;
         text-decoration: none;
         color: ${props => props.theme.color.white};
-        border-radius: ${props => props.theme.borderRadius.subNavLink};
+    }
 
-        &.active {
-            background: rgba(0, 0, 0, .2);
-        }
+    .indicator {
+        border-radius: ${props => props.theme.borderRadius.subNavLink};
+        background: rgba(0, 0, 0, .2);
+        height: calc(100% - 1rem);
+        position: absolute;
+        top: .5rem;
+        transition: all .2s ease-in-out;
+        z-index: -1;
     }
 `;
