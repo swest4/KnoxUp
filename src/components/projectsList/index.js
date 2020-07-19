@@ -10,7 +10,7 @@ export default ({ projects = [] }) => {
 
   return (
     <Styles ref={ref} className={inView ? 'active' : ''}>
-      {projects.length && (
+      {projects.length > 0 && (
         <motion.div
           className="inner"
           initial={{ opacity: 0 }}
