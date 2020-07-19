@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export default styled.section`
   padding: 2rem;
-  height: 100%;
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     padding: 7rem 2rem 5rem;
@@ -11,13 +10,11 @@ export default styled.section`
   .inner {
     max-width: ${(props) => props.theme.maxWidth.container};
     margin: auto;
-    height: 100%;
   }
 
   .wrapper {
     background: ${(props) => props.theme.color.white};
     border-radius: 5px;
-    height: 100%;
 
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
       background: none;
