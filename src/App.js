@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'emotion-theming';
@@ -7,8 +7,16 @@ import GlobalStyles from './Global.styled.js';
 import Header from './components/header';
 import Routes from './routes';
 import theme from './theme';
+import SplashScreen from './components/splashScreen';
+import { AnimatePresence } from 'framer-motion';
 
 const App = () => {
+  const [isLoaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    window.setTimeout(() => setLoaded(true), 2000);
+  });
+
   return (
     <Router>
       <Helmet>
@@ -37,11 +45,17 @@ const App = () => {
       </Helmet>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
+
         <AppStyles className="App">
-          <Header />
-          <section className="content">
-            <Routes />
-          </section>
+          <AnimatePresence>{!isLoaded && <SplashScreen />}</AnimatePresence>
+          {isLoaded && (
+            <>
+              <Header />
+              <section className="content">
+                <Routes />
+              </section>
+            </>
+          )}
         </AppStyles>
       </ThemeProvider>
     </Router>
