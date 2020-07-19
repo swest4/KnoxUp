@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Styles from './styled';
 import toKebabCase from '../../utils/toKebabCase';
 
-export default ({ projects }) => {
+export default ({ projects = [] }) => {
   const projectsByYear = projects.reduce((years, { end_date, ...rest }) => {
     if (years[end_date]) {
       return {

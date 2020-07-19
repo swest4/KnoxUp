@@ -1,9 +1,9 @@
 import React from 'react';
 import Page from '../../../components/shared/page';
+import ProjectsList from '../../../components/projectsList';
 
-export default () => (
-    <Page>
-        <p>List Filters</p>
-        <p>List</p>
-    </Page>
+export default ({ projects = [] }) => (
+  <Page>
+    <ProjectsList projects={projects} />
+  </Page>
 );
