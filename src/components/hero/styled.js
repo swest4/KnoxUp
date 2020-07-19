@@ -21,6 +21,8 @@ export default styled.section`
   .buildingWrap {
     white-space: nowrap;
     margin-bottom: -1rem;
+    overflow-x: hidden;
+    margin-top: -14%;
 
     figure {
       display: inline-block;
