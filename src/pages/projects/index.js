@@ -7,6 +7,7 @@ import Timeline from './timeline';
 import List from './list';
 import Project from './project';
 import useRdsData from '../../hooks/useRdsData';
+import toKebabCase from '../../utils/toKebabCase';
 
 const navItems = [
   {
@@ -42,7 +43,18 @@ export default () => {
           <Timeline projects={projects} />
         </Route>
         <Route path="/projects/list/" component={List} />
-        <Route path="/projects/:projectId/" component={Project} />
+        <Route path="/projects/:projectId/">
+          {({ match }) => {
+            const project =
+              projects &&
+              projects.filter(
+                ({ project_name }) =>
+                  toKebabCase(project_name) === match.params.projectId
+              )[0];
+
+            return project ? <Project {...project} /> : null;
+          }}
+        </Route>
       </Switch>
     </Page>
   );

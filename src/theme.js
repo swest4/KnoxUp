@@ -54,7 +54,7 @@ export default {
     desktop: '1024px',
   },
   maxWidth: {
-    container: '1200px',
+    container: '1000px',
     menu: '500px',
   },
   borderRadius: {
