@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export default styled.section`
   padding: 7rem 2rem 5rem;
   background: ${(props) => props.theme.gradients.n2p};
+  flex-grow: 1;
 
   .inner {
     width: 100%;
