@@ -1,47 +1,46 @@
 import React from "react";
-import Styles from "./styled";
-import Button from "../shared/buttonChip";
-import A from "../shared/buttonLink";
+import { GoogleMap, LoadScript, InfoWindow } from '@react-google-maps/api';
 
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import Embassy from '../../svgs/Embassy';
+
+import useRdsData from '../../hooks/useRdsData';
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '100%',
+  height: 'calc(100vh - 110px)',
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 35.9606,
+  lng:  -83.9207
 };
 
 export default () => {
-  const [map, setMap] = React.useState(null)
-
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
+  const sites = useRdsData();
 
   return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyCsAfa4WqASPDbyECxtESeuJp66WC2kYzM"
-    >
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-    </LoadScript>
+    sites
+      ? (
+        <LoadScript
+          googleMapsApiKey="AIzaSyCsAfa4WqASPDbyECxtESeuJp66WC2kYzM"
+        >
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={14}
+          >
+            {
+              sites.map((site) => (
+                <InfoWindow
+                  key={site.project_name}
+                  position={{lat: site.lat, lng: site.lng}}
+                >
+                  <Embassy width="30px"/>
+                </InfoWindow>
+              ))
+            }
+          </GoogleMap>
+        </LoadScript>
+      ) : null
   )
 }

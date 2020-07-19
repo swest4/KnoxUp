@@ -1,0 +1,16 @@
+.gm-style-iw {
+  padding: 0 !important;
+}
+.gm-ui-hover-effect {
+  display: none !important;
+}
+.gm-style .gm-style-iw-t::after {
+  display: none !important;
+}
+.gm-style-iw-d {
+  margin: 0 -20px -30px 0 !important;
+}
+.gm-style .gm-style-iw-c {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
