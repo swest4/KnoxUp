@@ -21,6 +21,11 @@ export default () => (
         both cases, the goal is to appropriately incentivize business owners and
         developers to create an economic activity where there was none before.
       </blockquote>
+      <h4>
+        KnoxUp is an archive of projects related to the PILOT program. There are
+        three different ways to view the data on each project. You can choose
+        between list, timeline and map view.{" "}
+      </h4>
     </Content>
 
     <BlurbsThree
