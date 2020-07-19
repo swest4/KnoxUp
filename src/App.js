@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import { ThemeProvider } from 'emotion-theming';
 import AppStyles from './App.styled.js';
 import Header from './components/header';
 import Footer from './components/footer';
 import Routes from './routes';
 import useRdsData from './hooks/useRdsData';
+import theme from './theme';
 
 const App = () => {
   const rdsData = useRdsData();
@@ -25,11 +27,13 @@ const App = () => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
-      <AppStyles className="App">
-        <Header />
-        <Routes />
-        <Footer />
-      </AppStyles>
+      <ThemeProvider theme={theme}>
+        <AppStyles className="App">
+          <Header />
+          <Routes />
+          <Footer />
+        </AppStyles>
+      </ThemeProvider>
     </Router>
   );
 };
