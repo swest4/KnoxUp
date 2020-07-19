@@ -28,7 +28,7 @@ export default () => (
         <>
           <ExploreIcon />
           <p>
-            Use our interactive map to view all projects the City of Knoxville
+            Use the interactive map to view all projects the City of Knoxville
             and Knox County have invested in.
           </p>
           <ButtonLink to="/projects/map/">Get Started</ButtonLink>
@@ -38,8 +38,9 @@ export default () => (
         <>
           <TimelineIcon />
           <p>
-            Use our interactive timeline to view all projects the City of
-            Knoxville and Knox County have invested in.
+            The Timeline view shows a list of projects in sequential order. You
+            can easily scroll through the years and see how Knoxville has
+            developed{" "}
           </p>
           <ButtonLink to="/projects/timeline/">Get Started</ButtonLink>
         </>
@@ -48,8 +49,8 @@ export default () => (
         <>
           <ListIcon />
           <p>
-            Use our interactive list to view all projects the City of Knoxville
-            and Knox County have invested in.
+            The Interactive list to view all projects the City of Knoxville and
+            Knox County have invested in.
           </p>
           <ButtonLink to="/projects/list/">Get Started</ButtonLink>
         </>
