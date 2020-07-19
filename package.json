@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
     "framer-motion": "^2.1.0",
     "react": "^16.13.1",
@@ -17,7 +18,8 @@
     "react-intersection-observer": "^8.26.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-slider": "^1.0.8"
   },
   "scripts": {
     "start": "react-app-rewired start",

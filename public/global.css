@@ -9,8 +9,11 @@
 }
 .gm-style-iw-d {
   margin: 0 -20px -30px 0 !important;
+  overflow: visible !important;
 }
 .gm-style .gm-style-iw-c {
   border-radius: 0 !important;
   background-color: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
 }

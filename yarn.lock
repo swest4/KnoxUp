@@ -7888,6 +7888,11 @@ react-side-effect@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
 
+react-slider@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-slider/-/react-slider-1.0.8.tgz#a60877ca9acd18f61fce6786346223aedceff053"
+  integrity sha512-GXnw6b7V3yeGiaOZJeQHbdOmQT+z5LlYni+3g1C0vAfKtdoQEO/fW2Iesz7ZEIt/Lf5E5hW5UsRbAiWQkZU+GA==
+
 react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
