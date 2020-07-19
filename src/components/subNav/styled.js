@@ -43,7 +43,7 @@ export default styled.nav`
         height: calc(100% - 1rem);
         position: absolute;
         top: .5rem;
-        transition: all .2s ease-in-out;
+        transition: all .4s ease-in-out;
         z-index: -1;
     }
 `;
