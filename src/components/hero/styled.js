@@ -5,6 +5,7 @@ export default styled.section`
   text-align: center;
   background: url("./knoxmap.png");
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -13,10 +14,25 @@ export default styled.section`
     margin-bottom: 0;
     letter-spacing: -0.04em;
     color: ${(props) => props.theme.color.purple};
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease-in-out;
+    .active& {
+      opacity: 1;
+      transform: none;
+    }
   }
   h2 {
     font-style: italic;
     margin-top: 0.5em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0.2s;
+    .active& {
+      opacity: 1;
+      transform: none;
+    }
   }
   .buildingWrap {
     white-space: nowrap;
