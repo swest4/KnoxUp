@@ -72,6 +72,7 @@ export default styled.header`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      transition: all 0.4s ease-in-out;
 
       &.active {
         color: ${(props) => props.theme.color.white};
