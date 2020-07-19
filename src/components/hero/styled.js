@@ -3,11 +3,16 @@ import styled from "@emotion/styled";
 export default styled.section`
   /* min-height: 100vh; */
   text-align: center;
+  background: url("./knoxmap.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   h1 {
     font-size: 6em;
     margin-bottom: 0;
     letter-spacing: -0.04em;
+    color: ${(props) => props.theme.color.purple};
   }
   h2 {
     font-style: italic;
