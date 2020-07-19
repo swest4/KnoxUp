@@ -15,7 +15,6 @@ export default styled.section`
   .wrapper {
     background: ${(props) => props.theme.color.white};
     border-radius: 5px;
-    overflow: hidden;
 
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
       background: none;
@@ -35,6 +34,14 @@ export default styled.section`
         position: sticky;
         top: 0;
         background: ${(props) => props.theme.color.white};
+
+        &:first-child {
+          border-radius: 5px 0 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 0 5px 0;
+        }
       }
     }
 
