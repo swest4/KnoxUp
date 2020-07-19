@@ -44,7 +44,7 @@ export default styled.section`
         }
 
         &:last-child {
-          border-radius: 0 0 5px 0;
+          border-radius: 0 5px 0 0;
         }
       }
     }
