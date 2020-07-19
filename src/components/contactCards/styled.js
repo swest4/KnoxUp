@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export default styled.section`
   padding: 7rem 2rem 5rem;
@@ -26,7 +26,7 @@ export default styled.section`
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     color: ${(props) => props.theme.color.navy};
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     width: 100%;
     box-sizing: border-box;
     flex-grow: 1;
@@ -34,6 +34,16 @@ export default styled.section`
     @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
       width: 33%;
       margin: 0 1rem;
+    }
+
+    figure {
+      max-width: 300px;
+      margin: 0 0 1rem 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     h4 {
