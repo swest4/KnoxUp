@@ -30,6 +30,23 @@ export default styled.section`
     width: 100%;
     box-sizing: border-box;
     flex-grow: 1;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0.4s;
+
+    .active& {
+      opacity: 1;
+      transform: none;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.6s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.8s;
+    }
 
     @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
       width: 33%;

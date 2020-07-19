@@ -12,17 +12,17 @@ export default styled.section`
   .inner {
     max-width: ${(props) => props.theme.maxWidth.container};
     margin: auto;
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
-    transition-delay: 1s;
-
-    .active& {
-      opacity: 1;
-    }
   }
 
   section {
     margin-bottom: 3rem;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transition-delay: 1s;
+
+    &.active {
+      opacity: 1;
+    }
 
     h3 {
       text-align: center;

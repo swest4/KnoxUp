@@ -1,5 +1,6 @@
 import React, { createRef, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 import Styles from './styled';
 
 export default ({ links = [] }) => {
@@ -9,6 +10,7 @@ export default ({ links = [] }) => {
     opacity: 0,
   });
   const listRef = createRef(null);
+  const [ref, inView] = useInView({ threshold: 0.25, triggerOnce: true });
 
   useEffect(() => {
     const activeChild = listRef.current.querySelector('.active');
@@ -25,10 +27,10 @@ export default ({ links = [] }) => {
   });
 
   return (
-    <Styles>
+    <Styles ref={ref} className={inView ? 'active' : ''}>
       <ul ref={listRef}>
-        {links.map(({ to, title }) => (
-          <li key={to}>
+        {links.map(({ to, title }, i) => (
+          <li key={to} style={{ transitionDelay: `${i * 0.2}s` }}>
             <NavLink to={to}>{title}</NavLink>
           </li>
         ))}
