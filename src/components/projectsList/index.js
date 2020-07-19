@@ -21,20 +21,18 @@ export default ({ projects = [] }) => {
               </tr>
             </thead>
             <tbody>
-              {projects.map(
-                ({ project_name, project_address, end_date }, i) => (
-                  <tr style={{ transitionDelay: `${i * 0.2}s` }}>
-                    <td>{project_name}</td>
-                    <td>{project_address}</td>
-                    <td>{end_date}</td>
-                    <td>
-                      <Link to={`/projects/${toKebabCase(project_name)}/`}>
-                        Read more
-                      </Link>
-                    </td>
-                  </tr>
-                )
-              )}
+              {projects.map(({ project_name, project_address, end_date }) => (
+                <tr>
+                  <td>{project_name}</td>
+                  <td>{project_address}</td>
+                  <td>{end_date}</td>
+                  <td>
+                    <Link to={`/projects/${toKebabCase(project_name)}/`}>
+                      Read more
+                    </Link>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
