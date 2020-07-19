@@ -7,6 +7,7 @@ export default styled.header`
   box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: row;
+  z-index: 100;
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     flex-direction: column;

@@ -6,35 +6,56 @@ import Map from './map';
 import Timeline from './timeline';
 import List from './list';
 import Project from './project';
+import useRdsData from '../../hooks/useRdsData';
+import toKebabCase from '../../utils/toKebabCase';
 
 const navItems = [
-    {
-        to: '/projects/map/',
-        title: 'Map',
-    },
-    {
-        to: '/projects/timeline/',
-        title: 'Timeline',
-    },
-    {
-        to: '/projects/list/',
-        title: 'List',
-    },
+  {
+    to: '/projects/map/',
+    title: 'Map',
+  },
+  {
+    to: '/projects/timeline/',
+    title: 'Timeline',
+  },
+  {
+    to: '/projects/list/',
+    title: 'List',
+  },
 ];
 
-export default () => (
+export default () => {
+  const projects = useRdsData();
+
+  return (
     <Page>
-        <Route path="/projects/" exact>
-            <Redirect to="/projects/map/" />
+      <Route path="/projects/" exact>
+        <Redirect to="/projects/map/" />
+      </Route>
+
+      <SubNav links={navItems} />
+
+      <Switch>
+        <Route path="/projects/map/">
+          <Map projects={projects} />
         </Route>
+        <Route path="/projects/timeline/">
+          <Timeline projects={projects} />
+        </Route>
+        <Route path="/projects/list/" component={List} />
+        <Route path="/projects/:projectId/">
+          {({ match }) => {
+            const project =
+              projects &&
+              projects.filter(
+                ({ project_name }) =>
+                  toKebabCase(project_name) === match.params.projectId
+              )[0];
 
-        <SubNav links={navItems} />
-
-        <Switch>
-            <Route path="/projects/map/" component={Map} />
-            <Route path="/projects/timeline/" component={Timeline} />
-            <Route path="/projects/list/" component={List} />
-            <Route path="/projects/:projectId/" component={Project} />
-        </Switch>
+            return project ? <Project {...project} /> : null;
+          }}
+        </Route>
+      </Switch>
     </Page>
-);
+  );
+};
