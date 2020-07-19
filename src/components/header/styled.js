@@ -34,7 +34,6 @@ export default styled.header`
 
     > li {
       > ul {
-        background: rgba(255, 255, 255, 0.1);
         display: none;
         margin: 0 -0.5rem;
         padding: 0.25rem 0;
@@ -68,12 +67,90 @@ export default styled.header`
   li {
     padding: 0.25rem 0.5rem;
 
+    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+      > ul {
+        background: transparent;
+        transition: all 0.8s ease-in-out;
+        transition-delay: 1s;
+
+        .active& {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        li {
+          &:nth-child(1) {
+            a {
+              transition-delay: 0.8s;
+            }
+          }
+
+          &:nth-child(2) {
+            a {
+              transition-delay: 1s;
+            }
+          }
+
+          &:nth-child(3) {
+            a {
+              transition-delay: 1.2s;
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        a {
+          transition-delay: 0.6s;
+        }
+      }
+
+      &:nth-child(3) {
+        a {
+          transition-delay: 1.4s;
+        }
+      }
+    }
+
+    @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+      a {
+        opacity: 0;
+        transform: scale(1.1);
+        transition: all 0.4s ease-in-out;
+
+        .active& {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      &:nth-child(2) {
+        a {
+          transition-delay: 0.6s;
+        }
+      }
+
+      &:nth-child(3) {
+        a {
+          transition-delay: 0.8s;
+        }
+      }
+    }
+
     a {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       transition: all 0.4s ease-in-out;
+      opacity: 0;
+      transform: scale(1.1);
+      transition: all 0.4s ease-in-out;
+      transition-delay: 0.4s;
+
+      .active& {
+        opacity: 1;
+        transform: none;
+      }
 
       &.active {
         color: ${(props) => props.theme.color.white};

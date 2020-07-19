@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export default styled.section`
   /* min-height: 100vh; */
   text-align: center;
-  background: url("./knoxmap.png");
+  background: url('./knoxmap.png');
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -46,6 +46,13 @@ export default styled.section`
       margin: 0 0.5rem;
       position: relative;
       flex-grow: 1;
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+      transition-delay: 0.4s;
+
+      .active& {
+        opacity: 1;
+      }
 
       &:nth-child(1) {
         width: 20%;
@@ -53,14 +60,17 @@ export default styled.section`
 
       &:nth-child(2) {
         width: 35%;
+        transition-delay: 0.8s;
       }
 
       &:nth-child(3) {
         width: 30%;
+        transition-delay: 1s;
       }
 
       &:nth-child(4) {
         width: 17%;
+        transition-delay: 0.6s;
       }
     }
     img {
