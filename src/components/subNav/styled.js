@@ -5,6 +5,7 @@ export default styled.nav`
   padding: 0.5em 1em;
   position: sticky;
   top: 0;
+  z-index: 100;
 
   ul {
     max-width: ${(props) => props.theme.maxWidth.container};
