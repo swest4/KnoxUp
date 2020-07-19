@@ -1,10 +1,26 @@
 import React from 'react';
-import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Page from '../../components/shared/page';
+import SubNav from '../../components/subNav';
 import Map from './map';
 import Timeline from './timeline';
 import List from './list';
 import Project from './project';
+
+const navItems = [
+    {
+        to: '/projects/map/',
+        title: 'Map',
+    },
+    {
+        to: '/projects/timeline/',
+        title: 'Timeline',
+    },
+    {
+        to: '/projects/list/',
+        title: 'List',
+    },
+];
 
 export default () => (
     <Page>
@@ -12,11 +28,7 @@ export default () => (
             <Redirect to="/projects/map/" />
         </Route>
 
-        <ul>
-            <li><NavLink to="/projects/map/">Map</NavLink></li>
-            <li><NavLink to="/projects/timeline/">Timeline</NavLink></li>
-            <li><NavLink to="/projects/list/">List</NavLink></li>
-        </ul>
+        <SubNav links={navItems} />
 
         <Switch>
             <Route path="/projects/map/" component={Map} />

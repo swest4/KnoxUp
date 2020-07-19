@@ -7,6 +7,11 @@ export default ({
         navy: '#060321',
         white: '#FFFFFF',
     },
+    gradients: {
+      n2p: "linear-gradient(#000745, #4F28ED, #8D6AF6)",
+      b2p: "linear-gradient(#4F28ED, #8D6AF6)",
+      n2b: "linear-gradient(#000745, #4F28ED, #579CF0)",
+    },
     font: {
         primary: 'fira-sans',
     },
@@ -41,5 +46,11 @@ export default ({
         mobile: '320px',
         tablet: '768px',
         desktop: '1024px',
+    },
+    maxWidth: {
+        container: '1200px',
+    },
+    borderRadius: {
+        subNavLink: '1em',
     }
 });
