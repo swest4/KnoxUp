@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export default styled.main`
-  @import "https://use.typekit.net/hsn7pfs.css";
+  @import 'https://use.typekit.net/hsn7pfs.css';
 
   text-rendering: optimizeLegibility;
   font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (2100 - 320)));
@@ -37,32 +37,38 @@ export default styled.main`
     letter-spacing: ${(props) => props.theme.letterSpacing.normal};
   }
 
-  h1 {
+  h1,
+  .type-h1 {
     font-size: ${(props) => props.theme.type.h1};
     font-weight: ${(props) => props.theme.fontWeight.extraBold};
   }
 
-  h2 {
+  h2,
+  .type-h2 {
     font-size: ${(props) => props.theme.type.h2};
     font-weight: ${(props) => props.theme.fontWeight.bold};
   }
 
-  h3 {
+  h3,
+  .type-h3 {
     font-size: ${(props) => props.theme.type.h3};
     font-weight: ${(props) => props.theme.fontWeight.semiBold};
   }
 
-  h4 {
+  h4,
+  .type-h4 {
     font-size: ${(props) => props.theme.type.h4};
     font-weight: ${(props) => props.theme.fontWeight.semiBold};
   }
 
-  h5 {
+  h5,
+  .type-h5 {
     font-size: ${(props) => props.theme.type.h5};
     font-weight: ${(props) => props.theme.fontWeight.medium};
   }
 
-  h6 {
+  h6,
+  .type-h6 {
     font-size: ${(props) => props.theme.type.h6};
     font-weight: ${(props) => props.theme.fontWeight.medium};
   }
@@ -76,9 +82,19 @@ export default styled.main`
     color: ${(props) => props.theme.color.purple};
     font-weight: ${(props) => props.theme.fontWeight.semiBold};
     text-decoration: none;
+
     &:hover {
       color: ${(props) => props.theme.color.blurple};
     }
+  }
+
+  label,
+  .type-label {
+    font-size: ${(props) => props.theme.type.label};
+  }
+
+  .type-italic {
+    font-style: italic;
   }
 
   blockquote {
@@ -89,7 +105,7 @@ export default styled.main`
     position: relative;
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       width: 40%;
       height: 3px;
