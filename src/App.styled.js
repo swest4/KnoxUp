@@ -3,9 +3,18 @@ import styled from '@emotion/styled';
 export default styled.main`
     @import 'https://use.typekit.net/hsn7pfs.css';
 
-    body {
-        text-rendering: optimizeLegibility;
-        font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (2100 - 320)));
+    text-rendering: optimizeLegibility;
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (2100 - 320)));
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media (min-width: ${props => props.theme.breakpoints.desktop}) {
+        flex-direction: row;
+    }
+
+    .content {
+        flex-grow: 1;
+        min-height: 100vh;
     }
 
     h1, h2, h3, h4, h5, h6, p, blockquote, li, label, button {

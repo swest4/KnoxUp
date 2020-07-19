@@ -4,7 +4,8 @@ export default ({
         blurple: '#4F28ED',
         purple: '#8D6AF6',
         yellow: '#EDBD59',
-        navy: '#060321'
+        navy: '#060321',
+        white: '#FFFFFF',
     },
     font: {
         primary: 'fira-sans',
@@ -35,5 +36,10 @@ export default ({
         tight: '.01em',
         normal: '.018em',
         loose: '.026em',
+    },
+    breakpoints: {
+        mobile: '320px',
+        tablet: '768px',
+        desktop: '1024px',
     }
 });

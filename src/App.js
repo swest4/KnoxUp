@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'emotion-theming';
 import AppStyles from './App.styled.js';
+import GlobalStyles from './Global.styled.js';
 import Header from './components/header';
 import Footer from './components/footer';
 import Routes from './routes';
@@ -28,10 +29,13 @@ const App = () => {
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
       <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <AppStyles className="App">
           <Header />
-          <Routes />
-          <Footer />
+          <section className="content">
+            <Routes />
+            <Footer />
+          </section>
         </AppStyles>
       </ThemeProvider>
     </Router>
