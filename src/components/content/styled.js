@@ -1,8 +1,8 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export default styled.section`
   padding: 5rem 2rem;
-  background: ${(props) => props.theme.color.navyLt};
+  background: ${(props) => props.theme.gradients.n2p45};
 
   .inner {
     max-width: ${(props) => props.theme.maxWidth.container};
