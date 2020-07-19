@@ -1,25 +1,48 @@
 import styled from "@emotion/styled";
 
 export default styled.section`
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
-  /* height: 100vh; */
+  /* min-height: 100vh; */
   text-align: center;
 
   h1 {
-    font-size: 8em;
+    font-size: 6em;
     margin-bottom: 0;
     letter-spacing: -0.04em;
   }
-
+  h2 {
+    font-style: italic;
+    margin-top: 0.5em;
+  }
   .buildingWrap {
-    display: flex;
-    align-items: baseline;
+    white-space: nowrap;
+    margin-bottom: -1rem;
 
+    figure {
+      display: inline-block;
+      width: 25%;
+      margin: 0 0.5rem;
+      position: relative;
+      flex-grow: 1;
+
+      &:nth-child(1) {
+        width: 20%;
+      }
+
+      &:nth-child(2) {
+        width: 35%;
+      }
+
+      &:nth-child(3) {
+        width: 30%;
+      }
+
+      &:nth-child(4) {
+        width: 17%;
+      }
+    }
     img {
-      /* max-height: 300px; */
+      width: 100%;
+      height: 100%;
     }
   }
 `;
