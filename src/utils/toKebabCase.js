@@ -3,4 +3,4 @@ export default (str) =>
     .toLowerCase()
     .trim()
     .replace(/\040/g, '-')
-    .replace(/(?!\-)\W/g, '');
+    .replace(/(?!-)\W/g, '');

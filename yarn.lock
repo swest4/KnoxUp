@@ -1276,6 +1276,27 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
+"@react-google-maps/api@^1.9.8":
+  version "1.9.8"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-1.9.8.tgz#312dbb7e8d174501bbcb7fabca4125297ba690b6"
+  integrity sha512-xPVlDDIqIkINoJ/vRRgLX9Qh63D3AJwbwFMhZmLqTCBxLKLG+FyvLiHXwY3pHUkOWk5bz2MyABxqgi2wIHG7mg==
+  dependencies:
+    "@react-google-maps/infobox" "1.9.8"
+    "@react-google-maps/marker-clusterer" "1.9.8"
+    acorn "7.3.1"
+    acorn-jsx "^5.2.0"
+    invariant "2.2.4"
+
+"@react-google-maps/infobox@1.9.8":
+  version "1.9.8"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/infobox/-/infobox-1.9.8.tgz#eed97dd077185478b9d9b871ce84357bababfc72"
+  integrity sha512-82aL6IXLv9EqX4hOumkLvOSrkQ+A6UAH35QhcYKBgWIIm05qZ2owCSfVMG14TAYvzODc9BuMr2TWnx/k3y+MFA==
+
+"@react-google-maps/marker-clusterer@1.9.8":
+  version "1.9.8"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/marker-clusterer/-/marker-clusterer-1.9.8.tgz#6b61d38af96daac41014ce57be3e6e658164645d"
+  integrity sha512-IP5byj6GtOU9RNn4PxeTjxLMSnzslXjMZFVtqkxnz5YjqxpZUQ5gUx5974wcuCjpJtbYP6A1HZNhm0/AZZe7tw==
+
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
@@ -1764,6 +1785,11 @@ acorn-jsx@^5.2.0:
 acorn-walk@^6.0.1:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-6.2.0.tgz#123cb8f3b84c2171f1f7fb252615b1c78a6b1a8c"
+
+acorn@7.3.1:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.3.1.tgz#85010754db53c3fbaf3b9ea3e083aa5c5d147ffd"
+  integrity sha512-tLc0wSnatxAQHVHUapaHdz72pi9KUyHjq5KyHjGg9Y8Ifdc79pTh2XvI6I1/chZbnM7QtNKzh66ooDogPZSleA==
 
 acorn@^5.5.3:
   version "5.7.4"
@@ -2942,6 +2968,16 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
+create-emotion@^10.0.27:
+  version "10.0.27"
+  resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-10.0.27.tgz#cb4fa2db750f6ca6f9a001a33fbf1f6c46789503"
+  integrity sha512-fIK73w82HPPn/RsAij7+Zt8eCE8SptcJ3WoRMfxMtjteYxud8GDTKKld7MYwAX2TVhrw29uR1N/bVGxeStHILg==
+  dependencies:
+    "@emotion/cache" "^10.0.27"
+    "@emotion/serialize" "^0.11.15"
+    "@emotion/sheet" "0.9.4"
+    "@emotion/utils" "0.11.3"
+
 create-hash@^1.1.0, create-hash@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/create-hash/-/create-hash-1.2.0.tgz#889078af11a63756bcfb59bd221996be3a9ef196"
@@ -3540,6 +3576,14 @@ emotion-theming@^10.0.27:
     "@babel/runtime" "^7.5.5"
     "@emotion/weak-memoize" "0.2.5"
     hoist-non-react-statics "^3.3.0"
+
+emotion@^10.0.27:
+  version "10.0.27"
+  resolved "https://registry.yarnpkg.com/emotion/-/emotion-10.0.27.tgz#f9ca5df98630980a23c819a56262560562e5d75e"
+  integrity sha512-2xdDzdWWzue8R8lu4G76uWX5WhyQuzATon9LmNeCy/2BHVC6dsEpfhN1a0qhELgtDVdjyEA6J8Y/VlI5ZnaH0g==
+  dependencies:
+    babel-plugin-emotion "^10.0.27"
+    create-emotion "^10.0.27"
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -4857,7 +4901,7 @@ internal-slot@^1.0.2:
     has "^1.0.3"
     side-channel "^1.0.2"
 
-invariant@^2.2.2, invariant@^2.2.4:
+invariant@2.2.4, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:

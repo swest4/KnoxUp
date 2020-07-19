@@ -4,6 +4,6 @@ export default styled.article`
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
 `;
