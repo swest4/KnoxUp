@@ -71,11 +71,12 @@ export default styled.header`
       > ul {
         background: transparent;
         transition: all 0.8s ease-in-out;
-        transition-delay: 0.8s;
+        transition-delay: 1s;
 
         .active& {
           background: rgba(255, 255, 255, 0.1);
         }
+
         li {
           &:nth-child(1) {
             a {
