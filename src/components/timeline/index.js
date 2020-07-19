@@ -1,10 +1,11 @@
 import React from 'react';
-import { InView } from 'react-intersection-observer';
+import { InView, useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import Styles from './styled';
 import toKebabCase from '../../utils/toKebabCase';
 
-export default ({ projects }) => {
+export default ({ projects = [] }) => {
+  const [ref, inView] = useInView({ threshold: 0.25, triggerOnce: true });
   const projectsByYear = projects.reduce((years, { end_date, ...rest }) => {
     if (years[end_date]) {
       return {
@@ -39,7 +40,7 @@ export default ({ projects }) => {
   );
 
   return (
-    <Styles>
+    <Styles ref={ref} className={inView ? 'active' : ''}>
       <section className="inner">
         {orderedProjects.map(({ year, projects: projectsByYear }) => (
           <div className="timeline_year">
