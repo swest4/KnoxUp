@@ -86,6 +86,7 @@ export default styled.section`
         background: ${(props) => props.theme.color.white};
         border-radius: 5px;
         overflow: hidden;
+        position: relative;
 
         td {
           padding: 1rem;
