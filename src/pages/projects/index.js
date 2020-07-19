@@ -42,7 +42,9 @@ export default () => {
         <Route path="/projects/timeline/">
           <Timeline projects={projects} />
         </Route>
-        <Route path="/projects/list/" component={List} />
+        <Route path="/projects/list/">
+          <List projects={projects} />
+        </Route>
         <Route path="/projects/:projectId/">
           {({ match }) => {
             const project =
