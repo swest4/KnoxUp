@@ -24,8 +24,6 @@ export default ({ links = [] }) => {
     }
   });
 
-  console.log(indicatorStyles);
-
   return (
     <Styles>
       <ul ref={listRef}>
