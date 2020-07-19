@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export default styled.section`
   padding: 7rem 2rem 5rem;
@@ -19,7 +19,8 @@ export default styled.section`
     color: ${(props) => props.theme.color.white};
 
     h1,
-    h2 {
+    h2,
+    h3 {
       opacity: 0;
       transform: translateY(10px);
       transition: all 0.4s ease-in-out;
@@ -44,6 +45,15 @@ export default styled.section`
 
       .active& {
         opacity: 0.8;
+        transform: none;
+      }
+    }
+
+    h3 {
+      transition-delay: 0.6s;
+
+      .active& {
+        opacity: 1;
         transform: none;
       }
     }
