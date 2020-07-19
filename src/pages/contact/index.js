@@ -54,7 +54,12 @@ const contacts = [
 
 export default () => (
   <Page>
-    <Hero title="Contact" />
+    <Hero title="Contact">
+      <h3>
+        This team shares skills in UX and front-end development with a hint of
+        back-end. <em>Hence the Name "shortStack"</em>
+      </h3>
+    </Hero>
     <ContactCards contacts={contacts} />
   </Page>
 );
