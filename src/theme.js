@@ -5,12 +5,18 @@ export default {
     purple: "#8D6AF6",
     yellow: "#EDBD59",
     navy: "#060321",
+    navyLt: "#2D224F",
     white: "#FFFFFF",
   },
   gradients: {
     n2p: "linear-gradient(#000745, #4F28ED, #8D6AF6)",
     b2p: "linear-gradient(#4F28ED, #8D6AF6)",
     n2b: "linear-gradient(#000745, #4F28ED, #579CF0)",
+    n2n: "linear-gradient(45deg, #060321, #2D224F)",
+    n2p90: "linear-gradient(90deg, #000745, #4F28ED, #8D6AF6)",
+    n2b90: "linear-gradient(90deg, #000745, #4F28ED, #579CF0)",
+    b2p90: "linear-gradient(90deg, #4F28ED, #8D6AF6)",
+    b2p45: "linear-gradient(45deg, #4F28ED, #8D6AF6)",
   },
   font: {
     primary: "fira-sans",
