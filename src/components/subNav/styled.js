@@ -6,6 +6,12 @@ export default styled.nav`
   position: sticky;
   top: 0;
   z-index: 100;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+
+  .active& {
+    opacity: 1;
+  }
 
   ul {
     max-width: ${(props) => props.theme.maxWidth.container};
@@ -19,6 +25,12 @@ export default styled.nav`
 
   li {
     margin: 0 0.5rem;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+
+    .active& {
+      opacity: 1;
+    }
 
     &:first-child {
       margin-left: 0;
