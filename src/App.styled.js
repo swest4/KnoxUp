@@ -83,9 +83,20 @@ export default styled.main`
 
   blockquote {
     font-size: ${(props) => props.theme.type.h4};
-    font-weight: ${(props) => props.theme.fontWeight.semibold};
+    font-weight: ${(props) => props.theme.fontWeight.medium};
     font-style: italic;
     letter-spacing: 0;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 40%;
+      height: 3px;
+      background: ${(props) => props.theme.color.purple};
+      margin: 2rem auto;
+      text-align: center;
+    }
   }
 
   li {

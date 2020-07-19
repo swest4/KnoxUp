@@ -13,8 +13,7 @@ export default () => (
     <Hero />
 
     <Content>
-      <h4>purpose</h4>
-      <h5>example text</h5>
+      <h2>Enriching Our Communities</h2>
       <blockquote>
         In Knoxville and Knox County, the Payment-In-Lieu-Of-Taxes (PILOT)
         program is targeted at the development of property for either jobs
