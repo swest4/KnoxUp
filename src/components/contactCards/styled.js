@@ -48,6 +48,7 @@ export default styled.section`
 
     h4 {
       margin: 0 0 1rem 0;
+      color: ${(props) => props.theme.color.blurple};
     }
 
     ul {
