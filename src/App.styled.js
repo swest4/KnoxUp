@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export default styled.main`
-  @import "https://use.typekit.net/hsn7pfs.css";
+  @import 'https://use.typekit.net/hsn7pfs.css';
 
   text-rendering: optimizeLegibility;
   font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (2100 - 320)));
@@ -20,7 +20,7 @@ export default styled.main`
   .content {
     flex-grow: 1;
     height: 100vh;
-    overflow: scroll;
+    overflow: auto;
   }
 
   h1,
