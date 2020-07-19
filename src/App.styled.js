@@ -7,6 +7,7 @@ export default styled.main`
   font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (2100 - 320)));
   display: flex;
   flex-direction: column-reverse;
+  height: 100vh;
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     flex-direction: row;
@@ -18,7 +19,8 @@ export default styled.main`
 
   .content {
     flex-grow: 1;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: scroll;
   }
 
   h1,
