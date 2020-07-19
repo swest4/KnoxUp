@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import AppStyles from './App.styled.js';
@@ -6,8 +6,6 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Routes from './routes';
 import useRdsData from './hooks/useRdsData';
-
-import Logo from './icons/Logo';
 
 const App = () => {
   const rdsData = useRdsData();
