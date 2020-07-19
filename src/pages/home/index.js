@@ -42,7 +42,7 @@ export default () => (
             Use our interactive timeline to view all projects the City of
             Knoxville and Knox County have invested in.
           </p>
-          <ButtonLink to="/projects/map/">Get Started</ButtonLink>
+          <ButtonLink to="/projects/timeline/">Get Started</ButtonLink>
         </>
       }
       columnThree={
@@ -52,7 +52,7 @@ export default () => (
             Use our interactive list to view all projects the City of Knoxville
             and Knox County have invested in.
           </p>
-          <ButtonLink to="/projects/map/">Get Started</ButtonLink>
+          <ButtonLink to="/projects/list/">Get Started</ButtonLink>
         </>
       }
     />

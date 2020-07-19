@@ -4,6 +4,12 @@ export default styled.section`
   padding: 3rem 2rem;
   overflow: auto;
   position: relative;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+
+  .active& {
+    opacity: 1;
+  }
 
   .inner {
     max-width: ${(props) => props.theme.maxWidth.container};

@@ -5,7 +5,7 @@ export default styled.div`
   width: 300px;
   height: 300px;
   border-radius: 100%;
-  border: solid 10px pink;
+  border: solid 10px ${(props) => props.theme.color.purple};
   box-sizing: border-box;
 
   .children {
