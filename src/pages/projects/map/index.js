@@ -4,7 +4,7 @@ import Map from '../../../components/map';
 
 export default () => (
     <Page>
-      <p>Map Filters</p>
+      {/* <p>Map Filters</p> */}
       <Map />
     </Page>
 );
