@@ -77,21 +77,21 @@ const visibility = (currentYear, endyear, term) => {
   return vis;
 };
 
-const marginCrop = (currentYear, endyear, term) => {
-  let crop = 0;
-  const start = endyear - term;
-  if (currentYear >= endyear) {
-    return 0;
-  }
-
-  if (endyear > currentYear && start <= currentYear) {
-    crop = (1 - (term - (endyear - currentYear)) / term) * 85;
-  }
-  if (start > currentYear) {
-    crop = 85;
-  }
-  return crop;
-}
+// const marginCrop = (currentYear, endyear, term) => {
+//   let crop = 0;
+//   const start = endyear - term;
+//   if (currentYear >= endyear) {
+//     return 0;
+//   }
+//
+//   if (endyear > currentYear && start <= currentYear) {
+//     crop = (1 - (term - (endyear - currentYear)) / term) * 85;
+//   }
+//   if (start > currentYear) {
+//     crop = 85;
+//   }
+//   return crop;
+// }
 
 
 export default () => {
