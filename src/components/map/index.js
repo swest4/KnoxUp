@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GoogleMap, LoadScript, InfoWindow } from '@react-google-maps/api';
 import ReactSlider from 'react-slider';
 import { css } from 'emotion';
+import { motion, useAnimation } from 'framer-motion';
 
 import { Link } from 'react-router-dom';
 import Embassy from '../../svgs/Embassy';
@@ -10,22 +11,32 @@ import toKebabCase from '../../utils/toKebabCase';
 import useRdsData from '../../hooks/useRdsData';
 
 import styled from '@emotion/styled';
+import darkTheme from './darkTheme';
 
 const StyledSlider = styled(ReactSlider)`
   width: calc(100% - 2rem);
-  height: 25px;
-  margin: 1rem;
+  height: 1.1625rem;
+  margin: 1.2rem;
 `;
 
 const StyledThumb = styled.div`
-  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
   line-height: 25px;
-  width: 50px;
+  width: 3.5rem;
   text-align: center;
-  background-color: #000;
+  background-color: ${(props) => props.theme.color.purple};
   color: #fff;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  transform: translateY(-22%);
   cursor: grab;
+
+  &:focus{
+    outline: none;
+    box-shadow: 0px 0px 6px #0066ff;
+  }
 `;
 
 const Thumb = (props, state) => (
@@ -58,7 +69,7 @@ const visibility = (currentYear, endyear, term) => {
   }
 
   if (endyear > currentYear && start <= currentYear) {
-    vis = (term - (endyear - currentYear)) / term;
+    vis = 0.3 + ((term - (endyear - currentYear)) / term / 0.3);
   }
   if (start > currentYear) {
     vis = 0;
@@ -66,12 +77,38 @@ const visibility = (currentYear, endyear, term) => {
   return vis;
 };
 
+const marginCrop = (currentYear, endyear, term) => {
+  let crop = 0;
+  const start = endyear - term;
+  if (currentYear >= endyear) {
+    return 0;
+  }
+
+  if (endyear > currentYear && start <= currentYear) {
+    crop = (1 - (term - (endyear - currentYear)) / term) * 85;
+  }
+  if (start > currentYear) {
+    crop = 85;
+  }
+  return crop;
+}
+
+
 export default () => {
   const [year, setYear] = useState(2020);
   const sites = useRdsData();
+  const controls = useAnimation();
+
+  const onIdle = (map) => {
+    console.log('idle now')
+    controls.start({
+      opacity: 1,
+      transition: { duration: 2 },
+    });
+  };
 
   return sites ? (
-    <div className={css``}>
+    <div>
       <StyledSlider
         min={2003}
         max={2030}
@@ -80,48 +117,54 @@ export default () => {
         renderThumb={Thumb}
         onChange={(value) => setYear(value)}
       />
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
-          {sites.map((site) => (
-            <InfoWindow
-              key={site.project_name}
-              position={{ lat: site.lat, lng: site.lng }}>
-              <Link to={`/projects/${toKebabCase(site.project_name)}`}>
-                <Embassy
-                  width="30px"
-                  style={{
-                    opacity: visibility(year, site.end_date, site.term),
-                  }}
-                  className={css`
-                    position: relative;
-                    z-index: 500;
-                    &:hover {
-                      + p {
-                        opacity: 1;
+      <motion.div animate={controls} initial={{ opacity: 0 }}>
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API}>
+          <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16} onIdle={onIdle} options={{styles: darkTheme}}>
+            {sites.map((site) => (
+              <InfoWindow
+                key={site.project_name}
+                position={{ lat: site.lat, lng: site.lng }}>
+                <Link
+                  to={`/projects/${toKebabCase(site.project_name)}`}
+                >
+                  <Embassy
+                    width="30px"
+                    style={{
+                      opacity: visibility(year, site.end_date, site.term),
+                      // clipPath: `inset(${marginCrop(year, site.end_date, site.term)}px 0 0 0)`,
+                    }}
+                    className={css`
+                      position: relative;
+                      overflow: hidden;
+                      z-index: 1;
+                      &:hover {
+                         ~ p {
+                          opacity: 1;
+                        }
                       }
-                    }
-                  `}
-                />
-                <p
-                  className={css`
-                    position: relative;
-                    z-index: 1000;
-                    opacity: 0;
-                    margin-top: 0;
-                    color: #000;
-                    background: #fff;
-                    border-radius: 1rem;
-                    border: 1px #fff solid;
-                    padding: 0.5rem;
-                    transform: translateX(-50%);
-                  `}>
-                  {site.project_name}
-                </p>
-              </Link>
-            </InfoWindow>
-          ))}
-        </GoogleMap>
-      </LoadScript>
+                    `}
+                  />
+                  <p
+                    className={css`
+                      position: relative;
+                      z-index: 1000;
+                      opacity: 0;
+                      margin-top: 0;
+                      color: #fff;
+                      background: #8D6AF6;
+                      border-radius: 0.5rem;
+                      border: 1px #fff solid;
+                      padding: 0.5rem;
+                      transform: translateY(20%) translateX(-35%);
+                    `}>
+                    {site.project_name}
+                  </p>
+                </Link>
+              </InfoWindow>
+            ))}
+          </GoogleMap>
+        </LoadScript>
+      </motion.div>
     </div>
   ) : null;
 };

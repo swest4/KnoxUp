@@ -10,7 +10,6 @@ export default () => {
     ]).then(resp => {
       const newStore = resp?.[0]?.map(place => {
         const loc = resp?.[1]?.find(location => location.name === place.project_name);
-        console.log(loc);
         return {
           ...place,
           lat: loc.lat,

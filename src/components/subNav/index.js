@@ -24,7 +24,7 @@ export default ({ links = [] }) => {
         opacity: activeChild ? 1 : 0,
       });
     }
-  });
+  },[indicatorStyles.left, indicatorStyles.width, listRef]);
 
   return (
     <Styles ref={ref} className={inView ? 'active' : ''}>

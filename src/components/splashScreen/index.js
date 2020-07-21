@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Logo from '../../svgs/Logo';
-import Styles from './styled';
 
 export default ({ visible = true }) => (
   <motion.section

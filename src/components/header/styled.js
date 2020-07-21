@@ -78,19 +78,19 @@ export default styled.header`
         }
 
         li {
-          &:nth-child(1) {
+          &:nth-of-type(1) {
             a {
               transition-delay: 0.8s;
             }
           }
 
-          &:nth-child(2) {
+          &:nth-of-type(2) {
             a {
               transition-delay: 1s;
             }
           }
 
-          &:nth-child(3) {
+          &:nth-of-type(3) {
             a {
               transition-delay: 1.2s;
             }
@@ -98,13 +98,13 @@ export default styled.header`
         }
       }
 
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         a {
           transition-delay: 0.6s;
         }
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         a {
           transition-delay: 1.4s;
         }
@@ -123,13 +123,13 @@ export default styled.header`
         }
       }
 
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         a {
           transition-delay: 0.6s;
         }
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         a {
           transition-delay: 0.8s;
         }

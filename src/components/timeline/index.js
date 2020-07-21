@@ -43,7 +43,7 @@ export default ({ projects = [] }) => {
     <Styles ref={ref} className={inView ? 'active' : ''}>
       <section className="inner">
         {orderedProjects.map(({ year, projects: projectsByYear }) => (
-          <div className="timeline_year">
+          <div className="timeline_year" key={year}>
             <h4>{year}</h4>
 
             <ul>
