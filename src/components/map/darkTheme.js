@@ -1,12 +1,11 @@
 import theme from '../../theme';
-console.log(theme);
 
 export default [
   {
     elementType: 'geometry',
     stylers: [
       {
-        // color: '#242f3e' 
+        // color: '#242f3e'
         // color: '#0E0827'
         color: theme.color.navy
       }

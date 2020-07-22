@@ -23,12 +23,12 @@ export default styled.section`
     transform: scale(1.1);
     transition: all 0.4s ease-in-out;
 
-    &:first-child {
+    &:first-of-type {
       margin-top: 0;
       transition-delay: 0.2s;
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       transition-delay: 0.4s;
     }
 
@@ -45,7 +45,7 @@ export default styled.section`
     @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
       margin: 0 1rem;
 
-      &:first-child {
+      &:first-of-type {
         margin-left: 0;
       }
 

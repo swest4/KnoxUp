@@ -103,7 +103,6 @@ export default () => {
   const controls = useAnimation();
 
   const onIdle = (map) => {
-    console.log('idle now')
     controls.start({
       opacity: 1,
       transition: { duration: 2 },
