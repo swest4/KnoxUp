@@ -12,6 +12,7 @@ import useRdsData from '../../hooks/useRdsData';
 
 import styled from '@emotion/styled';
 import darkTheme from './darkTheme';
+import theme from '../../theme';
 
 const StyledSlider = styled(ReactSlider)`
   width: calc(100% - 2rem);
@@ -51,9 +52,11 @@ const StyledTrack = styled.div`
 `;
 
 const Track = (props, state) => <StyledTrack {...props} index={state.index} />;
+
+// TODO: Add resize-watcher to change this. Might have to change via maps api call.
 const containerStyle = {
   width: '100%',
-  height: 'calc(100vh - 110px)',
+  height: `calc(100vh - ${window.innerWidth > parseInt(theme.breakpoints.desktop.slice(0, -2)) ? 110 : 191}px)`,
 };
 
 const center = {
