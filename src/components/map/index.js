@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleMap, LoadScript, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, InfoWindow, useLoadScript} from '@react-google-maps/api';
 import ReactSlider from 'react-slider';
 import { css } from 'emotion';
 import { motion, useAnimation } from 'framer-motion';
@@ -101,6 +101,9 @@ export default () => {
   const [year, setYear] = useState(2020);
   const sites = useRdsData();
   const controls = useAnimation();
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API,
+  })
 
   const onIdle = (map) => {
     controls.start({
@@ -120,52 +123,55 @@ export default () => {
         onChange={(value) => setYear(value)}
       />
       <motion.div animate={controls} initial={{ opacity: 0 }}>
-        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API}>
-          <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16} onIdle={onIdle} options={{styles: darkTheme}}>
-            {sites.map((site) => (
-              <InfoWindow
-                key={site.project_name}
-                position={{ lat: site.lat, lng: site.lng }}>
-                <Link
-                  to={`/projects/${toKebabCase(site.project_name)}`}
-                >
-                  <Embassy
-                    width="30px"
-                    style={{
-                      opacity: visibility(year, site.end_date, site.term),
-                      // clipPath: `inset(${marginCrop(year, site.end_date, site.term)}px 0 0 0)`,
-                    }}
-                    className={css`
-                      position: relative;
-                      overflow: hidden;
-                      z-index: 1;
-                      &:hover {
-                         ~ p {
-                          opacity: 1;
-                        }
-                      }
-                    `}
-                  />
-                  <p
-                    className={css`
-                      position: relative;
-                      z-index: 1000;
-                      opacity: 0;
-                      margin-top: 0;
-                      color: #fff;
-                      background: #8D6AF6;
-                      border-radius: 0.5rem;
-                      border: 1px #fff solid;
-                      padding: 0.5rem;
-                      transform: translateY(20%) translateX(-35%);
-                    `}>
-                    {site.project_name}
-                  </p>
-                </Link>
-              </InfoWindow>
-            ))}
-          </GoogleMap>
-        </LoadScript>
+        {
+          isLoaded
+            ? (
+              <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16} onIdle={onIdle} options={{styles: darkTheme}}>
+                {sites.map((site) => (
+                  <InfoWindow
+                    key={site.project_name}
+                    position={{ lat: site.lat, lng: site.lng }}>
+                    <Link
+                      to={`/projects/${toKebabCase(site.project_name)}`}
+                    >
+                      <Embassy
+                        width="30px"
+                        style={{
+                          opacity: visibility(year, site.end_date, site.term),
+                          // clipPath: `inset(${marginCrop(year, site.end_date, site.term)}px 0 0 0)`,
+                        }}
+                        className={css`
+                          position: relative;
+                          overflow: hidden;
+                          z-index: 1;
+                          &:hover {
+                             ~ p {
+                              opacity: 1;
+                            }
+                          }
+                        `}
+                      />
+                      <p
+                        className={css`
+                          position: relative;
+                          z-index: 1000;
+                          opacity: 0;
+                          margin-top: 0;
+                          color: #fff;
+                          background: #8D6AF6;
+                          border-radius: 0.5rem;
+                          border: 1px #fff solid;
+                          padding: 0.5rem;
+                          transform: translateY(20%) translateX(-35%);
+                        `}>
+                        {site.project_name}
+                      </p>
+                    </Link>
+                  </InfoWindow>
+                ))}
+              </GoogleMap>
+            ) : null
+        }
       </motion.div>
     </div>
   ) : null;
