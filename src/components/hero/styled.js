@@ -54,21 +54,21 @@ export default styled.section`
         opacity: 1;
       }
 
-      &:nth-child(1) {
+      &:nth-of-type(1) {
         width: 20%;
       }
 
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         width: 35%;
         transition-delay: 0.8s;
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         width: 30%;
         transition-delay: 1s;
       }
 
-      &:nth-child(4) {
+      &:nth-of-type(4) {
         width: 17%;
         transition-delay: 0.6s;
       }

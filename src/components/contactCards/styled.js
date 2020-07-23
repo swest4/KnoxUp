@@ -40,11 +40,11 @@ export default styled.section`
       transform: none;
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       transition-delay: 0.6s;
     }
 
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       transition-delay: 0.8s;
     }
 
@@ -83,7 +83,7 @@ export default styled.section`
           height: 25px;
         }
 
-        &:first-child {
+        &:first-of-type {
           margin-left: 0;
         }
 

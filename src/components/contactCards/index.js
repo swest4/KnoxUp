@@ -18,7 +18,7 @@ export default ({ contacts = [] }) => {
     <Styles ref={ref} className={inView ? "active" : ""}>
       <div className="inner">
         {contacts.map(({ name, social, img }) => (
-          <div className="card">
+          <div className="card" key={name}>
             <figure>
               <img src={img} alt={name} />
             </figure>

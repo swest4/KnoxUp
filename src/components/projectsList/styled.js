@@ -36,7 +36,7 @@ export default styled.section`
         top: 0;
         background: ${(props) => props.theme.color.white};
 
-        &:first-child {
+        &:first-of-type {
           border-radius: 5px 0 0 0;
         }
 

@@ -32,7 +32,7 @@ export default styled.nav`
       opacity: 1;
     }
 
-    &:first-child {
+    &:first-of-type {
       margin-left: 0;
     }
 

@@ -28,7 +28,7 @@ export default ({ projects = [] }) => {
               </thead>
               <tbody>
                 {projects.map(({ project_name, project_address, end_date }) => (
-                  <tr>
+                  <tr key={project_name}>
                     <td>{project_name}</td>
                     <td>{project_address}</td>
                     <td>{end_date}</td>
